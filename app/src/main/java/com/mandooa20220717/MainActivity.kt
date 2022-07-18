@@ -20,27 +20,34 @@ class MainActivity : AppCompatActivity() {
             startActivity(myIntent)
         }
 
-
-//      로그인 시작
         loginBtn.setOnClickListener {
-//            아이디 값과 비밀번호 변수화
-            val id = idEdt.text.toString() // 아이디값 변수화
-            val password = passwordEdt.text.toString() //비밀번호 변수화
-//            1. 아이디값이 "admin"인가 패스워드가 "asdf"
-//            2. 아이디값 판별
-            if ( id != "admin"){
-                Toast.makeText(this, "아이디가 잘못되었습니다.", Toast.LENGTH_SHORT).show()
-            }
-//            3. 비밀번호 값 판별
-            else if ( password != "asdf"){
-                Toast.makeText(this, "비밀번호가 잘못되었습니다.", Toast.LENGTH_SHORT).show()
-            }
-//            4. 두가지 모두 맞을때
-            else {
-                Toast.makeText(this, "관리자님 환영합니다.", Toast.LENGTH_SHORT).show()
-            }
-            Log.d("메인 액티비티","로그인 버튼 클릭")
+            val inputEmail = idEdt.text.toString()
+
+            val myIntent = Intent(this, MainActivity2::class.java)
+            myIntent.putExtra("email",inputEmail)
+            startActivity(myIntent)
         }
+
+////      로그인 시작
+//        loginBtn.setOnClickListener {
+////            아이디 값과 비밀번호 변수화
+//            val id = idEdt.text.toString() // 아이디값 변수화
+//            val password = passwordEdt.text.toString() //비밀번호 변수화
+////            1. 아이디값이 "admin"인가 패스워드가 "asdf"
+////            2. 아이디값 판별
+//            if ( id != "admin"){
+//                Toast.makeText(this, "아이디가 잘못되었습니다.", Toast.LENGTH_SHORT).show()
+//            }
+////            3. 비밀번호 값 판별
+//            else if ( password != "asdf"){
+//                Toast.makeText(this, "비밀번호가 잘못되었습니다.", Toast.LENGTH_SHORT).show()
+//            }
+////            4. 두가지 모두 맞을때
+//            else {
+//                Toast.makeText(this, "관리자님 환영합니다.", Toast.LENGTH_SHORT).show()
+//            }
+//            Log.d("메인 액티비티","로그인 버튼 클릭")
+//        }
 
     }
 }
